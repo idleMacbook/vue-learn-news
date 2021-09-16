@@ -24,14 +24,16 @@
 
 <script>
 import ListItem from '../components/ListItem';
+import DataFetchingMixin from '../mixins/DataFetchingMixin';
 
 export default {
   components: {
     ListItem,
   },
-  created() {
-    this.$store.dispatch('FETCH_ASK');
-  },
+  mixins: [DataFetchingMixin],
+  // created() {
+  //   this.$store.dispatch('FETCH_ASK');
+  // },
 };
 // import { mapGetters } from 'vuex';
 // export default {

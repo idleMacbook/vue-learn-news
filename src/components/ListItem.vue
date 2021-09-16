@@ -37,17 +37,18 @@ export default {
   computed: {
     //...mapGetters(['fetchedNews', 'fetchedJobs', 'fetchedAsk']),
     listItems() {
-      const routeName = this.$route.name;
+      return this.$store.state.list;
+      // const routeName = this.$route.name;
 
-      if (routeName === 'news') {
-        return this.$store.state.news;
-      } else if (routeName === 'jobs') {
-        return this.$store.state.jobs;
-      } else if (routeName === 'ask') {
-        return this.$store.state.ask;
-      } else {
-        return null;
-      }
+      // if (routeName === 'news') {
+      //   return this.$store.state.news;
+      // } else if (routeName === 'jobs') {
+      //   return this.$store.state.jobs;
+      // } else if (routeName === 'ask') {
+      //   return this.$store.state.ask;
+      // } else {
+      //   return null;
+      // }
     },
   },
   // created() {

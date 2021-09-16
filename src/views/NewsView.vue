@@ -38,39 +38,46 @@
 
 <script>
 import ListItem from '../components/ListItem';
-import bus from '../utils/bus.js';
+import DataFetchingMixin from '../mixins/DataFetchingMixin';
 
 export default {
   components: {
     ListItem,
   },
-  created() {
-    bus.$emit('start:spinner');
-    this.$store.dispatch('FETCH_NEWS');
-    bus.$emit('end:spinner');
-  },
-};
-// import { mapGetters } from 'vuex';
+  mixins: [DataFetchingMixin],
+  //   created() {
+  //     bus.$emit('start:spinner');
 
-// export default {
-//   /* data() {
-//     return {
-//       news: [],
-//     };
-//   }, */
-//   computed: {
-//     /* ...mapState({
-//       news: (state) => state.news,
-//     }), */
-//     ...mapGetters(['fetchedNews']),
-//   },
-//   created() {
-//     this.$store.dispatch('FETCH_NEWS');
-//     /* fetchNewsList()
-//       .then((response) => (this.news = response.data))
-//       .catch((error) => console.log(error)); */
-//   },
-// };
+  //     this.$store
+  //       .dispatch('FETCH_NEWS')
+  //       .then(() => {
+  //         console.log('fetched');
+  //         bus.$emit('end:spinner');
+  //       })
+  //       .catch((error) => console.log(error));
+  //   },
+  // };
+  // import { mapGetters } from 'vuex';
+
+  // export default {
+  //   /* data() {
+  //     return {
+  //       news: [],
+  //     };
+  //   }, */
+  //   computed: {
+  //     /* ...mapState({
+  //       news: (state) => state.news,
+  //     }), */
+  //     ...mapGetters(['fetchedNews']),
+  //   },
+  //   created() {
+  //     this.$store.dispatch('FETCH_NEWS');
+  //     /* fetchNewsList()
+  //       .then((response) => (this.news = response.data))
+  //       .catch((error) => console.log(error)); */
+  //   },
+};
 </script>
 
 <style lang="scss" scoped>

@@ -30,6 +30,7 @@ export default {
   },
   created() {
     bus.$on('start:spinner', this.startSpinner);
+    bus.$on('end:spinner', this.endSpinner);
   },
   beforeDestroy() {
     bus.$off('start:spinner', this.startSpinner);
